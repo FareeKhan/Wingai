@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import Comments from './src/Screens/Community/Comments'
+import CreatePost from './src/Screens/CreatePost/CreatePost'
+import Notifications from './src/Screens/Notifications/Notifications'
+import Challenges from './src/Screens/Challanges/Challenges'
+import ChallengePage from './src/Screens/Challanges/ChallengePage'
+import ReviewChallenge from './src/Screens/Challanges/ReviewChallenge'
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    // <Comments />
+    // <CreatePost/>
+    // <Notifications/>
+    // <Challenges/>
+    <ChallengePage/>
+    // <ReviewChallenge/>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
+
+const styles = StyleSheet.create({})
