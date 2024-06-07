@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Danger from '../../../assets/Svg/danger.svg'
 import ChatImg from '../../../assets/Svg/chatImg.svg'
@@ -7,7 +7,7 @@ import { color } from '../../Constant/colors'
 import { chatData } from '../../Constant/data'
 import { EvilIcons } from '@expo/vector-icons';
 
-const ChallengePage = () => {
+const ChallengePage = ({navigation}) => {
 
 
   const renderItem = ({ item, index }) => {
@@ -65,7 +65,10 @@ const ChallengePage = () => {
         />
 
         <LinearGradient colors={['#FF8248', '#E64683']} style={styles.inputBoxIcon}>
+          <TouchableOpacity onPress={()=>navigation.navigate('ReviewChallenge')}>
           <EvilIcons name="sc-telegram" size={24} color="#fff" />
+
+          </TouchableOpacity>
         </LinearGradient>
       </View>
     </View>

@@ -5,7 +5,7 @@ import VerticalDots from '../../../assets/Svg/verticalDots.svg'
 import { notificationsList } from '../../Constant/data'
 import { color } from '../../Constant/colors'
 
-const Notifications = () => {
+const Notifications = ({navigation}) => {
 
     const [selected, setSelected] = useState('')
     const renderItem = ({ item, index }) => {
@@ -15,7 +15,7 @@ const Notifications = () => {
                 {
                     item?.notifications?.map((item, index) => {
                         return (
-                            <TouchableOpacity onPress={() => setSelected(item?.id)} style={[styles.innerNotify, {
+                            <TouchableOpacity key={index} onPress={() => setSelected(item?.id)} style={[styles.innerNotify, {
                                 backgroundColor: selected == item?.id ? color.theme?.concat(10) : "#fff",
                             }]}>
                                 {item?.svgImg}
@@ -35,7 +35,9 @@ const Notifications = () => {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.headerBox}>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
                 <BackArrow />
+                </TouchableOpacity>
                 <Text style={styles.headerTitle}>Notifications</Text>
                 <VerticalDots style={{ marginLeft: "auto" }} />
             </View>

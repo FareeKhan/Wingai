@@ -6,6 +6,8 @@ import Notifications from './src/Screens/Notifications/Notifications'
 import Challenges from './src/Screens/Challanges/Challenges'
 import ChallengePage from './src/Screens/Challanges/ChallengePage'
 import ReviewChallenge from './src/Screens/Challanges/ReviewChallenge'
+import StackNavigation from './src/Navigation /StackNavigation'
+import { NavigationContainer } from '@react-navigation/native'
 
 const App = () => {
   return (
@@ -13,8 +15,11 @@ const App = () => {
     // <CreatePost/>
     // <Notifications/>
     // <Challenges/>
-    <ChallengePage/>
+    // <ChallengePage/>
     // <ReviewChallenge/>
+<NavigationContainer>
+  <StackNavigation/>
+</NavigationContainer>
   )
 }
 

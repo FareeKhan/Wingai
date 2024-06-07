@@ -37,6 +37,7 @@ const UserComments = ({ data }) => {
     return (
         <View>
             <FlatList
+            showsVerticalScrollIndicator={false}
              data={data}
              renderItem={renderItem}
              keyExtractor={(item)=>item?.id}

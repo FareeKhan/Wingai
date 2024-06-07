@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { color } from '../../Constant/colors'
 import { Ionicons } from '@expo/vector-icons';
 
-const Challenges = () => {
+const Challenges = ({navigation}) => {
     const [selectedFilter, setSelectedFilter] = useState(1)
     const [selectedCat, setSelectedCat] = useState(1)
     return (
@@ -46,7 +46,9 @@ const Challenges = () => {
                                         <Text style={styles.catDesc} numberOfLines={2}>{item?.description}</Text>
                                     </View>
                                     <LinearGradient style={styles.forwardBox} colors={['#FF8248', '#E64683']}>
-                                        <Ionicons name="arrow-forward" size={20} color="#fff" />
+                                       <TouchableOpacity onPress={()=>navigation.navigate('ChallengePage')}>
+                                       <Ionicons name="arrow-forward" size={20} color="#fff" />
+                                       </TouchableOpacity>
                                     </LinearGradient>
                                 </View>
                             </TouchableOpacity>

@@ -10,7 +10,7 @@ import { categoryList } from '../../Constant/data';
 import { Ionicons } from '@expo/vector-icons';
 import CustomButton from '../../Components/CustomButton';
 
-const CreatePost = () => {
+const CreatePost = ({navigation}) => {
     const [toolTipVisible, setToolTipVisible] = useState()
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState();
@@ -42,10 +42,10 @@ const CreatePost = () => {
                 </View>
             </View>
 
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Challenges')} style={{ flexDirection: "row", alignItems: "center" }}>
                 <UserLogo />
                 <Text style={{ fontWeight: "600", marginLeft: 10 }}>Wade Warren</Text>
-            </View>
+            </TouchableOpacity>
 
 
             <TextInput
@@ -70,6 +70,7 @@ const CreatePost = () => {
             <View style={{flex:1,justifyContent:"flex-end",marginBottom:15}}>
                 <CustomButton
                     title={'Create Post'}
+                    onPress={()=>navigation.navigate('Notifications')}
                 />
             </View>
 
